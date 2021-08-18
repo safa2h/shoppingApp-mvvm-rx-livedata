@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".feature.main.detail.ProductDetailActivity">
+
+  <com.devsa.nikestore4.view.scroll.ObservableScrollView
+    android:id="@+id/observableScrollView"
+    android:layout_width="match_parent"
+    android:paddingBottom="50dp"
+    android:clipToPadding="false"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.devsa.nikestore4.view.NikeImageView
+          android:id="@+id/product_detail_iv"
+          app:viewAspectRatio="1.3"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      </FrameLayout>
+
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+          android:id="@+id/product_detail_title"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginTop="16dp"
+          android:ellipsize="end"
+          android:maxLines="2"
+          android:textAppearance="@style/TextAppearance.MyTheme.Headline6"
+          app:layout_constraintEnd_toStartOf="@+id/previous_detai_price"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:text="نام محصول " />
+
+        <TextView
+          android:maxLines="1"
+          android:id="@+id/previous_detai_price"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="?android:textColorSecondary"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="16dp"
+          android:textAppearance="@style/TextAppearance.MyTheme.Body2"
+          tools:text="125000 تومان"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+          android:maxLines="1"
+          android:id="@+id/current_detail_price"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:textAppearance="@style/TextAppearance.MyTheme.Body1"
+          app:layout_constraintEnd_toEndOf="@+id/previous_detai_price"
+          app:layout_constraintTop_toBottomOf="@+id/previous_detai_price"
+          tools:text="110000 تومان" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <TextView
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="من سایز ۴۴ رو خریداری کردم به حدی توو ساخت این کفش بد کار شده که وقتی توو پات میکنی نمیدونی دقیقاً مشکل از کجاست... نوک انگشت شصت به شدت تحت فشاره پشت پا هم گشاده وو بازی میکنه روی پا هم که جای قیطونش باشه، از هم فاصله زیادی داره وو یجوریه که حس میکنی انگاری پات بیرون زده"
+        android:textAppearance="@style/TextAppearance.MyTheme.Body2" />
+      <FrameLayout
+        android:paddingTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+          android:layout_gravity="center_vertical|start"
+          android:text="@string/comments"
+          android:textColor="?android:textColorSecondary"
+          android:textAppearance="@style/TextAppearance.MyTheme.Headline6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/insertComment"
+          android:layout_gravity="center_vertical|end"
+          style="@style/Widget.MaterialComponents.Button.TextButton"
+          />
+      </FrameLayout>
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_detail_comment"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+      <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:id="@+id/viewAllcomments"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/viewAllComments"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        />
+
+
+
+
+    </LinearLayout>
+
+
+
+  </com.devsa.nikestore4.view.scroll.ObservableScrollView>
+
+  <FrameLayout
+    android:translationZ="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+
+    <ImageView
+      android:layout_marginStart="16dp"
+      android:id="@+id/bacK_btn_detail"
+      android:layout_gravity="center_vertical|start"
+      android:src="@drawable/ic_back"
+
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+    <ImageView
+      android:layout_marginEnd="16dp"
+      android:id="@+id/favorite_btn_detail"
+      android:layout_gravity="center_vertical|end"
+      android:src="@drawable/ic_favorites"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+
+  </FrameLayout>
+
+  <com.google.android.material.card.MaterialCardView
+    app:cardElevation="4dp"
+    android:id="@+id/toolbarView_detail"
+    android:alpha="0"
+    app:cardCornerRadius="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+
+    <TextView
+      android:id="@+id/toolbar_title_detail"
+      android:layout_marginStart="48dp"
+      android:text="نام محصول"
+      android:layout_gravity="center_vertical|start"
+      android:textAppearance="@style/TextAppearance.MyTheme.Headline6"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+  </com.google.android.material.card.MaterialCardView>
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/addToCartBtn"
+    android:layout_width="match_parent"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:gravity="center"
+    android:text="@string/addToCart"
+    android:layout_height="wrap_content"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

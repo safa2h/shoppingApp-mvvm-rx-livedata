@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".feature.main.detail.comment.CommentActivity">
+  <com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:background="?colorSurface"
+    android:layout_height="wrap_content">
+
+    <com.devsa.nikestore4.view.NikeToolbar
+      android:layout_width="match_parent"
+      app:nikeToolbarTitle="نطرات"
+      android:id="@+id/comment_list_toolbar"
+      android:layout_height="56dp"/>
+
+
+
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+
+    android:id="@+id/comments_rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/insert_comment_btn"
+    android:layout_width="wrap_content"
+    android:src="@drawable/ic_round_insert_comment_24"
+    android:layout_gravity="bottom"
+    android:layout_marginStart="16dp"
+    android:backgroundTint="?colorPrimary"
+    app:fabSize="normal"
+    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
