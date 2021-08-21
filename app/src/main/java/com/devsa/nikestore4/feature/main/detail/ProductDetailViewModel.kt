@@ -8,10 +8,12 @@ import com.devsa.nikestore4.common.NikeViewModel
 import com.devsa.nikestore4.common.asyncNetworkRequest
 import com.devsa.nikestore4.data.Comment
 import com.devsa.nikestore4.data.Product
+import com.devsa.nikestore4.data.repo.CartRepository
 import com.devsa.nikestore4.data.repo.CommentRepository
+import io.reactivex.Completable
 import java.util.ArrayList
 
-class ProductDetailViewModel(bundle: Bundle,commentRepository: CommentRepository):NikeViewModel() {
+class ProductDetailViewModel(bundle: Bundle,commentRepository: CommentRepository,val cartRepository: CartRepository):NikeViewModel() {
     val productDetailLiveData=MutableLiveData<Product>()
     val commentDetailLiveData=MutableLiveData<List<Comment>>()
 
@@ -27,6 +29,10 @@ class ProductDetailViewModel(bundle: Bundle,commentRepository: CommentRepository
                 }
             })
 
+    }
+
+    fun addToCartBtn():Completable{
+        return  cartRepository.addToCart(productDetailLiveData.value!!.id).ignoreElement()
     }
 
 

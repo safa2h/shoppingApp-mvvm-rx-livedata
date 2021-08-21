@@ -11,6 +11,11 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.NikeStore4"
     android:usesCleartextTraffic="true">
+
+    <activity
+      android:name=".feature.auth.AuthActivity"
+      android:exported="true"
+      android:theme="@style/Theme.Nike.AuthTheme"/>
     <activity
       android:name=".feature.list.ProductListActivity"
       android:exported="true" />

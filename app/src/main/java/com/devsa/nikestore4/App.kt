@@ -3,10 +3,8 @@ package com.devsa.nikestore4
 import android.app.Application
 import android.os.Bundle
 import com.devsa.nikestore4.data.repo.*
-import com.devsa.nikestore4.data.repo.source.BannerRemoteDataSource
-import com.devsa.nikestore4.data.repo.source.CommentRemoteDataSource
-import com.devsa.nikestore4.data.repo.source.LocalDataSource
-import com.devsa.nikestore4.data.repo.source.RemoteDataSource
+import com.devsa.nikestore4.data.repo.BannerRepositoryImple
+import com.devsa.nikestore4.data.repo.source.*
 import com.devsa.nikestore4.feature.list.ProductListViewModel
 import com.devsa.nikestore4.feature.main.MainViewModel
 import com.devsa.nikestore4.feature.main.ProdudtAdapter
@@ -39,8 +37,9 @@ class App : Application() {
             factory<CommentRepository> {CommentRepositoryImple(CommentRemoteDataSource(get()))  }
             factory {(viewType:Int)-> ProdudtAdapter(viewType,get()) }
             factory { (mustShow:Boolean)->CommentAdapter(mustShow) }
+            factory <CartRepository>{CartRepositoryImple(CartRemoteDataSource(get()))  }
             viewModel{MainViewModel(get(),get())}
-            viewModel { (bundle:Bundle)->ProductDetailViewModel(bundle,get()) }
+            viewModel { (bundle:Bundle)->ProductDetailViewModel(bundle,get(),get()) }
             viewModel {(productId:Int)-> CommentViewModel(productId,get()) }
             viewModel {(sort:Int)->ProductListViewModel(sort,get()) }
         }

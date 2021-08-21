@@ -1,4 +1,4 @@
-package com.devsa.nikestore4.data.repo
+package com.devsa.nikestore4.data.repo.source
 
 import com.devsa.nikestore4.data.AddToCartResponse
 import com.devsa.nikestore4.data.CartItemCount
@@ -6,7 +6,7 @@ import com.devsa.nikestore4.data.CartResponse
 import com.devsa.nikestore4.data.MessageResponse
 import io.reactivex.Single
 
-interface CartRepository {
+interface CartDataSource {
 
     fun addToCart(productId:Int): Single<AddToCartResponse>
     fun get(): Single<CartResponse>
