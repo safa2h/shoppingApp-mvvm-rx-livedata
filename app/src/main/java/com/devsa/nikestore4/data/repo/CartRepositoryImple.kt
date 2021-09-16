@@ -13,18 +13,18 @@ class CartRepositoryImple(val cartDataSource: CartDataSource):CartRepository {
     }
 
     override fun get(): Single<CartResponse> {
-        TODO("Not yet implemented")
+      return cartDataSource.get()
     }
 
     override fun remove(cartItemId: Int): Single<MessageResponse> {
-        TODO("Not yet implemented")
+        return  cartDataSource.remove(cartItemId)
     }
 
     override fun changeCount(cartItemId: Int, count: Int): Single<AddToCartResponse> {
-        TODO("Not yet implemented")
+       return  cartDataSource.changeCount(cartItemId,count)
     }
 
     override fun getCartItemsCount(): Single<CartItemCount> {
-        TODO("Not yet implemented")
+        return cartDataSource.getCartItemsCount()
     }
 }

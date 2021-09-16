@@ -88,4 +88,8 @@ class ProductListActivity : AppCompatActivity(),ProdudtAdapter.OnProductListener
            putExtra(EXTRA_KEy,product)
        })
     }
+
+    override fun onFavoriteClickListener(product: Product) {
+        productListViewModel.addToFavorite(product)
+    }
 }

@@ -14,24 +14,42 @@
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable-v24/ic_view_type_large.xml" value="0.3435185185185185" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/background_comment.xml" value="0.3574074074074074" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/background_et_earch.xml" value="0.3685185185185185" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/background_order_history_item.xml" value="0.3671794871794872" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_back.xml" value="0.3611111111111111" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_baseline_favorite_fill_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.3712820512820513" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_favorites_fill.xml" value="0.3729166666666667" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_minize_square.xml" value="0.3712820512820513" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_order_history.xml" value="0.3671794871794872" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/ic_undraw_empty_cart.xml" value="0.3712820512820513" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/shape_devider.xml" value="0.3712820512820513" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/drawable/shape_image_profile.xml" value="0.3712820512820513" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_auth.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_check_out.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_comment.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_favorit.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_main.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_main2.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_order_history.xml" value="0.3567708333333333" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_product_detail.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_product_list.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/activity_shipping.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/cart_fragment.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/fragment_sign_up.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/frgmanet_login.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/frgment_banner.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_cart.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_comment.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_favorite.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_order_history.xml" value="0.3567708333333333" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_product.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_product_large.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_product_small.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/item_purchase_details.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/loading_view.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/main_fragment.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/profile_fragment.xml" value="0.3609375" />
+        <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/view_cart_empty_state.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/layout/view_toolbar.xml" value="0.3609375" />
         <entry key="..\:/dev/workspace/android/kotlin/NikeStore4/app/src/main/res/menu/main_nav.xml" value="0.3609375" />
       </map>

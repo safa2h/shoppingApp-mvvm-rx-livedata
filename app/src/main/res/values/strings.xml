@@ -28,6 +28,9 @@
   <string name="cartEmptyStateLoginRequired">وارد حساب کاربری شوید</string>
   <string name="cartEmptyStateCallToAction">وارد شوید</string>
   <string name="cartEmptyState">هیچ خبری نیست!</string>
+  <string name="orderHistory">سوابق سفارش</string>
+  <string name="orderHistory_orderId">شناسه سفارش</string>
+  <string name="orderHistory_payable">مبلغ سفارش</string>
   <string-array name="sort">
 
     <item>@string/sortlatest</item>

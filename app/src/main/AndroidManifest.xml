@@ -11,11 +11,33 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.NikeStore4"
     android:usesCleartextTraffic="true">
+    <activity
+      android:name=".feature.order.OrderHistoryActivity"
+      android:exported="true" />
+    <activity
+      android:name=".feature.favorites.FavoritActivity"
+      android:exported="true" />
+    <activity
+      android:name=".feature.checkOut.CheckOutActivity"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
 
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <data
+          android:host="expertdevelopers.ir"
+          android:scheme="nike" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name=".feature.shipping.ShippingActivity"
+      android:exported="true" />
     <activity
       android:name=".feature.auth.AuthActivity"
       android:exported="true"
-      android:theme="@style/Theme.Nike.AuthTheme"/>
+      android:theme="@style/Theme.Nike.AuthTheme" />
     <activity
       android:name=".feature.list.ProductListActivity"
       android:exported="true" />

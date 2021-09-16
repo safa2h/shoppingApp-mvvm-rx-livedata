@@ -103,4 +103,8 @@ class MainFrgment:NikeFragment(),ProdudtAdapter.OnProductListener {
        })
     }
 
+    override fun onFavoriteClickListener(product: Product) {
+      mainViewModel.addToFavorite(product)
+    }
+
 }

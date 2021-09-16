@@ -1,6 +1,7 @@
 package com.devsa.nikestore4.feature.main
 
 import androidx.lifecycle.MutableLiveData
+import com.devsa.nikestore4.common.NikeCompletableObserver
 import com.devsa.nikestore4.common.NikeSibgleObserver
 import com.devsa.nikestore4.common.NikeViewModel
 import com.devsa.nikestore4.common.asyncNetworkRequest
@@ -10,6 +11,7 @@ import com.devsa.nikestore4.data.SORT_POPULAR
 import com.devsa.nikestore4.data.SORTlATEST
 import com.devsa.nikestore4.data.repo.BannerRepository
 import com.devsa.nikestore4.data.repo.ProductRepository
+import io.reactivex.schedulers.Schedulers
 
 class MainViewModel(private val productRepository: ProductRepository,val bannerRepository: BannerRepository):NikeViewModel() {
     val productLiveData=MutableLiveData<List<Product>>()
@@ -41,6 +43,27 @@ class MainViewModel(private val productRepository: ProductRepository,val bannerR
                     bannertLiveData.value=t
                 }
             })
+    }
+
+    fun addToFavorite(product: Product){
+        if(product.isFavorite){
+            productRepository.deleteFromFavorites(product)
+                .subscribeOn(Schedulers.io())
+                .subscribe(object:NikeCompletableObserver(compositeDisposable){
+                    override fun onComplete() {
+                        product.isFavorite=false
+                    }
+                })
+        }else{
+            productRepository.addToFAvorite(product)
+                .subscribeOn(Schedulers.io())
+                .subscribe(object:NikeCompletableObserver(compositeDisposable){
+                    override fun onComplete() {
+                        product.isFavorite=true
+                    }
+                })
+        }
+
     }
 
 }

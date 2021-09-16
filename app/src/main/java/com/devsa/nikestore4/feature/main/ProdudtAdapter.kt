@@ -4,6 +4,7 @@ import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.devsa.nikestore4.R
@@ -59,6 +60,7 @@ class ProdudtAdapter(var viewType:Int= VIEW_TYPE_ROUND, val imageLoadingService:
         var currnetPriceTv: TextView = itemView.findViewById(R.id.currentPriceTv)
         var previousPriceTv: TextView = itemView.findViewById(R.id.previousPriceTv)
         val productIv: NikeImageView = itemView.findViewById(R.id.productIv)
+        val favoriteBtnIv: ImageView = itemView.findViewById(R.id.favoriteBtn)
 
         fun onbind(product: Product){
             imageLoadingService.load(productIv, product.image)
@@ -69,6 +71,16 @@ class ProdudtAdapter(var viewType:Int= VIEW_TYPE_ROUND, val imageLoadingService:
             itemView.setOnClickListener {
                 productListener?.onProductClickListener(product)
             }
+            if(product.isFavorite){
+                favoriteBtnIv.setImageResource(R.drawable.ic_baseline_favorite_fill_24)
+            }else
+                favoriteBtnIv.setImageResource(R.drawable.ic_favorites)
+
+            favoriteBtnIv.setOnClickListener {
+                productListener?.onFavoriteClickListener(product)
+                product.isFavorite=!product.isFavorite
+                notifyItemChanged(adapterPosition)
+            }
 
 
             itemView.implementSpringAnimationTrait()
@@ -77,5 +89,6 @@ class ProdudtAdapter(var viewType:Int= VIEW_TYPE_ROUND, val imageLoadingService:
 
     interface  OnProductListener{
         fun onProductClickListener(product: Product)
+        fun onFavoriteClickListener(product: Product)
     }
 }

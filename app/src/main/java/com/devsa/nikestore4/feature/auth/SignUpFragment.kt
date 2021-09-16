@@ -7,9 +7,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.devsa.nikestore4.R
+import com.devsa.nikestore4.common.NikeCompletableObserver
 import com.devsa.nikestore4.common.NikeFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class SignUpFragment:NikeFragment() {
+
+    val authViewModel:AuthViewModel by viewModel()
+    val compositDisposable=CompositeDisposable()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,6 +40,24 @@ class SignUpFragment:NikeFragment() {
             }.commit()
         }
 
+        signUpBtn.setOnClickListener {
+            authViewModel.signUp(emailEt.text.toString(),passEt.text.toString())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : NikeCompletableObserver(compositDisposable){
+                    override fun onComplete() {
+                        requireActivity().finish()
+                    }
+
+                })
+
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositDisposable.clear()
     }
 
 }

@@ -5,13 +5,20 @@ import androidx.lifecycle.LiveData
 import androidx.navigation.NavController
 import com.devsa.nikestore4.R
 import com.devsa.nikestore4.common.NikeActivitiy
+import com.devsa.nikestore4.common.convertDpToPixel
 import com.devsa.nikestore4.common.setupWithNavController
+import com.devsa.nikestore4.data.CartItemCount
+import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.color.MaterialColors
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : NikeActivitiy() {
     private var currentNavController: LiveData<NavController>? = null
-    var bottomNavigationView: BottomNavigationView?=null
-
+    var bottomNavigationView: BottomNavigationView? = null
+    val viewModel: MainActivityViewModel by viewModel()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +28,12 @@ class MainActivity : NikeActivitiy() {
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         } // Else, need to wait for onRestoreInstanceState
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.getCartItemCount()
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -54,4 +67,20 @@ class MainActivity : NikeActivitiy() {
     override fun onSupportNavigateUp(): Boolean {
         return currentNavController?.value?.navigateUp() ?: false
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onCartItemsCountChangeEvent(cartItemCount: CartItemCount) {
+        val badge = bottomNavigationView?.getOrCreateBadge(R.id.cart)
+        if (badge != null) {
+            badge.badgeGravity = BadgeDrawable.BOTTOM_START
+            badge.backgroundColor =
+                bottomNavigationView?.let { MaterialColors.getColor(it, R.attr.colorPrimary) }!!
+            badge.number = cartItemCount.count
+            badge.verticalOffset = convertDpToPixel(10f, this).toInt()
+            badge.isVisible = cartItemCount.count > 0
+
+        }
+
+    }
+
 }

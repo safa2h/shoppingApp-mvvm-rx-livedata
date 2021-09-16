@@ -36,4 +36,6 @@ class ProductDetailViewModel(bundle: Bundle,commentRepository: CommentRepository
     }
 
 
+
+
 }

@@ -7,9 +7,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.devsa.nikestore4.R
+import com.devsa.nikestore4.common.NikeCompletableObserver
 import com.devsa.nikestore4.common.NikeFragment
+import com.devsa.nikestore4.data.TokenResponse
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginFragment:NikeFragment() {
+
+    val authViewModel:AuthViewModel by viewModel()
+    val compositeDisposable=CompositeDisposable()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,11 +36,27 @@ class LoginFragment:NikeFragment() {
         val userName=view.findViewById<EditText>(R.id.emailEt)
         val password=view.findViewById<EditText>(R.id.passEt)
 
+        login_btn.setOnClickListener { 
+            authViewModel.login(userName.text.toString(),password.text.toString())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object:NikeCompletableObserver(compositeDisposable){
+                    override fun onComplete() {
+                       requireActivity().finish()
+                    }
+                })
+        }
+
 
         goToSingUP.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction().apply {
                 replace(R.id.fragmentContainer,SignUpFragment())
             }.commit()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 }

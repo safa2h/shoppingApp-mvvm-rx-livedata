@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".feature.shipping.ShippingActivity">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+    <com.devsa.nikestore4.view.NikeToolbar
+      android:layout_width="match_parent"
+      app:nikeToolbarTitle="انتخاب تحویل گیرنده و شیوه پرداخت"
+      android:layout_height="match_parent"/>
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.core.widget.NestedScrollView
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:clipToPadding="false"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/shipping_style_inputLayout_EditText"
+        android:hint="نام"
+        android:id="@+id/firstNameEtl_Shipping"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/firstNameEt_Shipping"
+          android:layout_width="match_parent"
+          style="shipping_styleEditText"
+          android:layout_height="wrap_content"/>
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/shipping_style_inputLayout_EditText"
+        android:hint="نام خانوادگی"
+        android:id="@+id/lastNameEtl_Shipping"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/lastNameEt_Shipping"
+          android:layout_width="match_parent"
+          style="shipping_styleEditText"
+          android:layout_height="wrap_content"/>
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/shipping_style_inputLayout_EditText"
+        android:hint="کد پستی"
+        android:id="@+id/postal_code_Etl_Shipping"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/postalCodeEt_Shipping"
+          android:layout_width="match_parent"
+          style="shipping_styleEditText"
+          android:layout_height="wrap_content"/>
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/shipping_style_inputLayout_EditText"
+        android:hint="شماره موبایل"
+        android:id="@+id/mobileEtl_Shipping"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/mobileEt_Shipping"
+          android:layout_width="match_parent"
+          style="shipping_styleEditText"
+          android:layout_height="wrap_content"/>
+      </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/shipping_style_inputLayout_EditText"
+        android:hint="آدرس تحویل گیرنده"
+        android:id="@+id/addressEtl_Shipping"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/addressEt_Shipping"
+          android:layout_width="match_parent"
+          style="shipping_styleEditText"
+          android:layout_height="wrap_content"/>
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <include layout="@layout/item_purchase_details"
+        android:layout_width="match_parent"
+        android:id="@+id/purchaseDetailVie_shipping"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        />
+      <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+          android:layout_width="wrap_content"
+          android:layout_marginEnd="8dp"
+          android:id="@+id/onilePayBtn"
+          android:text="پرداخت اینترنتی"
+          android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+          android:layout_width="wrap_content"
+          android:id="@+id/codBtn"
+          style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+          android:text="پرداخت در محل"
+          android:layout_marginStart="8dp"
+          android:layout_height="wrap_content"/>
+      </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+  </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
